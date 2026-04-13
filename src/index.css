@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0C0A08; /* Dark background matching the theme */
+}
+
+* {
+  box-sizing: border-box;
+}
