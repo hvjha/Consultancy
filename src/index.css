@@ -9,3 +9,16 @@ body {
 * {
   box-sizing: border-box;
 }
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.marquee-container {
+  animation: scroll 20s linear infinite;
+}
+
+.marquee-container:hover {
+  animation-play-state: paused;
+}

@@ -1,23 +1,25 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import CaseWork from './components/CaseWork';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
+import HeroCarousel from './components/HeroCarousel';
+import CompanyMarquee from './components/CompanyMarquee';
+import WelcomeSection from './components/WelcomeSection';
+import AboutSSVC from './components/AboutSSVC';
+import ServicesSSVC from './components/ServicesSSVC';
+import IndustriesSSVC from './components/IndustriesSSVC';
+import TestimonialsSSVC from './components/TestimonialsSSVC';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div style={{ margin: 0, padding: 0 }}>
       <Navbar />
-      <Hero />
-      <About />
-      <CaseWork />
-      <Services />
-      <Testimonials />
-      <Contact />
+      <HeroCarousel />
+      <CompanyMarquee />
+      <WelcomeSection />
+      <AboutSSVC />
+      <ServicesSSVC />
+      <IndustriesSSVC />
+      <TestimonialsSSVC />
       <Footer />
     </div>
   );
