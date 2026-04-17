@@ -82,7 +82,7 @@ const HeroGraphic = ({ layout }) => (
   </div>
 );
 
-export default function HeroCarousel() {
+export default function HeroCarousel({ onNavigateService }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
@@ -180,6 +180,7 @@ export default function HeroCarousel() {
                   transition: "transform 0.3s, box-shadow 0.3s",
                   display: "inline-block"
                 }}
+                onClick={(e) => { e.preventDefault(); if (onNavigateService) onNavigateService(slide.tabId); }}
                 onMouseEnter={e => {
                   e.target.style.transform = "translateY(-3px)";
                   e.target.style.boxShadow = "0 12px 24px rgba(85, 177, 168, 0.4)";
