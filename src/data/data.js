@@ -115,6 +115,7 @@ export const CASE_STUDIES = [
 export const HERO_SLIDES = [
   {
     id: 1,
+    tabId: 'mapping',
     title: "ORGANIZATIONAL MAPPING",
     heading: "Charting the path to optimal organizational performance.",
     desc: "Optimize organizational structure, roles, and processes.",
@@ -123,6 +124,7 @@ export const HERO_SLIDES = [
   },
   {
     id: 2,
+    tabId: 'assessment',
     title: "EXECUTIVE ASSESSMENT",
     heading: "Insightful assessment for exceptional leadership",
     desc: "Make informed decisions about talent development, succession planning, and leadership effectiveness.",
@@ -131,6 +133,7 @@ export const HERO_SLIDES = [
   },
   {
     id: 3,
+    tabId: 'strategy',
     title: "LEADERSHIP STRATEGY",
     heading: "Building the next generation of executives.",
     desc: "Empower your organization with visionary leaders who drive transformative growth and stability.",
@@ -139,6 +142,7 @@ export const HERO_SLIDES = [
   },
   {
     id: 4,
+    tabId: 'search',
     title: "TALENT ACQUISITION",
     heading: "Securing top-tier talent for global markets.",
     desc: "A streamlined, data-driven approach to finding the perfect executive fit for your specialized needs.",
@@ -147,6 +151,7 @@ export const HERO_SLIDES = [
   },
   {
     id: 5,
+    tabId: 'governance',
     title: "CORPORATE GOVERNANCE",
     heading: "Guiding boards to sustainable performance.",
     desc: "Expert advisory services to ensure alignment, accountability, and strategic foresight at the highest levels.",

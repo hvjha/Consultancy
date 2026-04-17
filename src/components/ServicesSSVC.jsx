@@ -64,7 +64,7 @@ const AssessmentIcon = () => (
   </svg>
 );
 
-const ServiceCard = ({ title, desc, icon, bgElement }) => {
+const ServiceCard = ({ id, title, desc, icon, bgElement, onOpenService }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -146,6 +146,7 @@ const ServiceCard = ({ title, desc, icon, bgElement }) => {
           display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
           transition: "background 0.2s"
         }}
+        onClick={(e) => { e.preventDefault(); if(onOpenService) onOpenService(id); }}
         onMouseEnter={e => e.target.style.background = "#261970"}
         onMouseLeave={e => e.target.style.background = "#1A114D"}
         >
@@ -156,21 +157,24 @@ const ServiceCard = ({ title, desc, icon, bgElement }) => {
   );
 };
 
-export default function ServicesSSVC() {
+export default function ServicesSSVC({ onOpenService }) {
   const services = [
     {
+      id: "search",
       title: "Executive Search Service",
       desc: "Enhance your executive recruitment process and secure high-caliber leaders by leveraging our expertise and resources",
       icon: <ScaleIcon />,
       bgElement: <Card1Illustration />
     },
     {
+      id: "mapping",
       title: "Organizational Mapping",
       desc: "Gaining market insights and deep organizational structures to build a robust talent pipeline.",
       icon: <MappingIcon />,
       bgElement: <Card2Illustration />
     },
     {
+      id: "assessment",
       title: "Executive Assessment",
       desc: "Make informed decisions about talent development, succession planning, and leadership effectiveness",
       icon: <AssessmentIcon />,
@@ -219,7 +223,7 @@ export default function ServicesSSVC() {
 
         <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "30px" }}>
           {services.map((svc, idx) => (
-            <ServiceCard key={idx} {...svc} />
+            <ServiceCard key={idx} {...svc} onOpenService={onOpenService} />
           ))}
         </div>
       </div>
