@@ -4,6 +4,7 @@ import { NAV_LINKS } from "../data/data";
 export default function Navbar({ onNavigate, activeView }) {
   const [scrolled, setScrolled] = useState(false);
   const [hoveredNav, setHoveredNav] = useState(null);
+  const [hoveredSubNav, setHoveredSubNav] = useState(null);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -13,14 +14,20 @@ export default function Navbar({ onNavigate, activeView }) {
 
   const NAV_MENU = [
     { label: "Home", id: "home" },
-    { label: "About", id: "about", dropdown: [
-      { label: "About Company", id: "about" },
-      { label: "Management Team", id: "about" } // Temp route to about
+    { label: "About", id: "about", icon: "↗", dropdown: [
+      { label: "About Company", id: "about", icon: "↗"},
+      { label: "Management Team", id: "management", icon: "↗"} 
     ]},
-    { label: "Services", id: "services", dropdown: [
-      { label: "Our Services", id: "services", arrow: true },
-      { label: "Industries We Service", id: "services" }, // Temp route to services
-      { label: "Functional Roles", id: "services" } // Temp route to services
+    { label: "Services", id: "services", icon: "↗", dropdown: [
+      { label: "Our Services", id: "services", icon: "↗", arrow: true, subDropdown: [
+        { label: "Talent Acquisition", id: "servicedetails", tabId: "search" },
+        { label: "Organizational Mapping", id: "servicedetails", tabId: "mapping" },
+        { label: "Executive Assessment", id: "servicedetails", tabId: "assessment" },
+        { label: "Leadership Strategy", id: "servicedetails", tabId: "strategy" },
+        { label: "Corporate Governance", id: "servicedetails", tabId: "governance" }
+      ]},
+      { label: "Industries We Service", id: "industries", icon: "↗" },
+      { label: "Functional Roles", id: "functional", icon: "↗" }
     ]}
   ];
   
@@ -83,9 +90,9 @@ export default function Navbar({ onNavigate, activeView }) {
                   onMouseLeave={e => e.target.style.color = isActive ? "#1A114D" : "#55B1A8"}
                 >
                   {item.label}
-                  {item.dropdown && (
-                    <span style={{ fontSize: "12px", transform: isHovered ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}>
-                      ↓
+                  {item.icon && (
+                    <span style={{ fontSize: "14px", fontWeight: "bold" }}>
+                      {item.icon}
                     </span>
                   )}
                 </a>
@@ -95,7 +102,7 @@ export default function Navbar({ onNavigate, activeView }) {
                   <div style={{
                     position: "absolute", top: "100%", left: "-20px",
                     background: "#5EB1A7", // Teal background
-                    minWidth: "240px",
+                    minWidth: "260px",
                     borderRadius: "0 0 12px 12px",
                     padding: "16px 24px",
                     boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
@@ -105,26 +112,74 @@ export default function Navbar({ onNavigate, activeView }) {
                     {item.dropdown.map((dropItem, idx) => (
                       <div 
                         key={idx}
-                        onClick={() => {
-                          if (onNavigate) onNavigate(dropItem.id);
-                          setHoveredNav(null);
-                        }}
-                        style={{
-                          padding: "16px 0",
-                          borderBottom: idx !== item.dropdown.length - 1 ? "1px solid rgba(255,255,255,0.2)" : "none",
-                          color: "rgba(255,255,255,0.95)",
-                          fontFamily: "'DM Sans', sans-serif",
-                          fontSize: "14px",
-                          fontWeight: 500,
-                          cursor: "pointer",
-                          display: "flex", justifyContent: "space-between", alignItems: "center",
-                          transition: "color 0.2s"
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.color = "#FFFFFF"}
-                        onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.95)"}
+                        style={{ position: "relative" }}
+                        onMouseEnter={() => setHoveredSubNav(dropItem.label)}
+                        onMouseLeave={() => setHoveredSubNav(null)}
                       >
-                        {dropItem.label}
-                        {dropItem.arrow && <span style={{ fontSize: "16px", fontWeight: 700 }}>›</span>}
+                        <div
+                          onClick={() => {
+                            if (onNavigate && !dropItem.subDropdown) onNavigate(dropItem.id);
+                            if (!dropItem.subDropdown) setHoveredNav(null);
+                          }}
+                          style={{
+                            padding: "16px 0",
+                            borderBottom: idx !== item.dropdown.length - 1 ? "1px solid rgba(255,255,255,0.2)" : "none",
+                            color: "rgba(255,255,255,0.95)",
+                            fontFamily: "'DM Sans', sans-serif",
+                            fontSize: "14px",
+                            fontWeight: 500,
+                            cursor: "pointer",
+                            display: "flex", justifyContent: "space-between", alignItems: "center",
+                            transition: "color 0.2s"
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.color = "#FFFFFF"}
+                          onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.95)"}
+                        >
+                          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                            {dropItem.icon && <span style={{ fontSize: "14px", fontWeight: "bold" }}>{dropItem.icon}</span>}
+                            <span>{dropItem.label}</span>
+                          </div>
+                          {dropItem.arrow && <span style={{ fontSize: "16px", fontWeight: 700 }}>›</span>}
+                        </div>
+
+                        {/* Sub Dropdown (Level 2) */}
+                        {dropItem.subDropdown && hoveredSubNav === dropItem.label && (
+                          <div style={{
+                            position: "absolute", top: "0px", left: "100%", marginLeft: "8px",
+                            background: "#5EB1A7",
+                            minWidth: "260px",
+                            borderRadius: "12px",
+                            padding: "16px 24px",
+                            boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
+                            zIndex: 201,
+                            display: "flex", flexDirection: "column"
+                          }}>
+                            {dropItem.subDropdown.map((subItem, sIdx) => (
+                              <div
+                                key={sIdx}
+                                onClick={() => {
+                                  if (onNavigate) onNavigate(subItem.id);
+                                  setHoveredNav(null);
+                                  setHoveredSubNav(null);
+                                }}
+                                style={{
+                                  padding: "16px 0",
+                                  borderBottom: sIdx !== dropItem.subDropdown.length - 1 ? "1px solid rgba(255,255,255,0.2)" : "none",
+                                  color: "rgba(255,255,255,0.95)",
+                                  fontFamily: "'DM Sans', sans-serif",
+                                  fontSize: "14px",
+                                  fontWeight: 500,
+                                  cursor: "pointer",
+                                  transition: "color 0.2s"
+                                }}
+                                onMouseEnter={e => e.currentTarget.style.color = "#FFFFFF"}
+                                onMouseLeave={e => e.currentTarget.style.color = "rgba(255,255,255,0.95)"}
+                              >
+                                {subItem.label}
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </div>
                     ))}
                   </div>
