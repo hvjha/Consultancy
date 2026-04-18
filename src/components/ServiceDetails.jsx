@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function ServiceDetails({ initialTab = 'mapping' }) {
   const [activeTab, setActiveTab] = useState(initialTab);
+  const navigate = useNavigate();
 
   const tabs = [
     { id: 'mapping', title: 'Organizational Mapping' },
@@ -156,9 +158,9 @@ export default function ServiceDetails({ initialTab = 'mapping' }) {
             fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 700,
             color: "#FFFFFF", letterSpacing: "1px", opacity: 0.8
           }}>
-            <span style={{ cursor: "pointer" }} onClick={() => window.location.hash = "#"}>HOME</span> 
+            <span style={{ cursor: "pointer" }} onClick={() => navigate('/')}>HOME</span> 
             <span style={{ margin: "0 8px" }}>·</span> 
-            <span style={{ cursor: "pointer" }} onClick={() => window.location.hash = "#services"}>SERVICES</span> 
+            <span style={{ cursor: "pointer" }} onClick={() => navigate('/services')}>SERVICES</span> 
             <span style={{ margin: "0 8px" }}>·</span> 
             <span>{currentData.header.toUpperCase()}</span>
           </div>

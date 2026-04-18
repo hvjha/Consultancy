@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { HERO_SLIDES } from '../data/data';
 
 // More sophisticated Abstract SVG Composition for Graphics
@@ -82,8 +83,9 @@ const HeroGraphic = ({ layout }) => (
   </div>
 );
 
-export default function HeroCarousel({ onNavigateService }) {
+export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -180,7 +182,7 @@ export default function HeroCarousel({ onNavigateService }) {
                   transition: "transform 0.3s, box-shadow 0.3s",
                   display: "inline-block"
                 }}
-                onClick={(e) => { e.preventDefault(); if (onNavigateService) onNavigateService(slide.tabId); }}
+                onClick={(e) => { e.preventDefault(); navigate(`/services/${slide.tabId}`); }}
                 onMouseEnter={e => {
                   e.target.style.transform = "translateY(-3px)";
                   e.target.style.boxShadow = "0 12px 24px rgba(85, 177, 168, 0.4)";
