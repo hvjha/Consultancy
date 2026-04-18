@@ -64,13 +64,44 @@ const AssessmentIcon = () => (
   </svg>
 );
 
+const StrategyIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M12 2l3 6 6 1-4.5 4.5 1 6-5.5-3.5-5.5 3.5 1-6L3 9l6-1 3-6z"/>
+  </svg>
+);
+
+const GovernanceIcon = () => (
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <rect x="3" y="3" width="18" height="18" rx="2" />
+    <path d="M3 9h18" />
+    <path d="M9 21V9" />
+  </svg>
+);
+
+const Card4Illustration = () => (
+  <svg viewBox="0 0 300 250" width="100%" height="100%" style={{ background: "linear-gradient(to bottom, #7CD5CE, #FFD166)" }}>
+    <circle cx="150" cy="125" r="80" fill="#FFFFFF" opacity="0.3" />
+    <path d="M100 150 L150 70 L200 150 Z" fill="#1A114D" />
+    <circle cx="150" cy="50" r="15" fill="#EF476F" />
+  </svg>
+);
+
+const Card5Illustration = () => (
+  <svg viewBox="0 0 300 250" width="100%" height="100%" style={{ background: "linear-gradient(to bottom, #7CD5CE, #118AB2)" }}>
+    <rect x="80" y="80" width="140" height="90" rx="10" fill="#FFFFFF" opacity="0.8" />
+    <line x1="100" y1="110" x2="200" y2="110" stroke="#1A114D" strokeWidth="4" />
+    <line x1="100" y1="130" x2="180" y2="130" stroke="#1A114D" strokeWidth="4" />
+    <circle cx="200" cy="60" r="30" fill="#06D6A0" opacity="0.9" />
+  </svg>
+);
+
 const ServiceCard = ({ id, title, desc, icon, bgElement, onOpenService }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
       style={{
-        flex: 1, minWidth: "280px", maxWidth: "350px",
+        flex: "1 1 21%", minWidth: "280px", maxWidth: "350px",
         height: "420px", position: "relative",
         borderRadius: "12px", overflow: "hidden",
         boxShadow: "0 10px 40px rgba(0,0,0,0.08)",
@@ -118,7 +149,7 @@ const ServiceCard = ({ id, title, desc, icon, bgElement, onOpenService }) => {
         <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 700, color: "#55B1A8", letterSpacing: "1px" }}>MORE DETAILS</span>
       </div>
 
-      {/* Hover State Info Box (Matches position of white box + text) */}
+      {/* Hover State Info Box */}
       <div style={{
         position: "absolute", bottom: "16px", left: "10%", right: "10%",
         height: "172px", background: "#55B1A8",
@@ -161,24 +192,38 @@ export default function ServicesSSVC({ onOpenService }) {
   const services = [
     {
       id: "search",
-      title: "Executive Search Service",
-      desc: "Enhance your executive recruitment process and secure high-caliber leaders by leveraging our expertise and resources",
+      title: "Talent Acquisition",
+      desc: "Securing top-tier talent for global markets via a streamlined, data-driven approach.",
       icon: <ScaleIcon />,
       bgElement: <Card1Illustration />
     },
     {
       id: "mapping",
       title: "Organizational Mapping",
-      desc: "Gaining market insights and deep organizational structures to build a robust talent pipeline.",
+      desc: "Optimize organizational structure, roles, and processes for continuous business growth.",
       icon: <MappingIcon />,
       bgElement: <Card2Illustration />
     },
     {
       id: "assessment",
       title: "Executive Assessment",
-      desc: "Make informed decisions about talent development, succession planning, and leadership effectiveness",
+      desc: "Make informed decisions about talent development, succession planning, and leadership effectiveness.",
       icon: <AssessmentIcon />,
       bgElement: <Card3Illustration />
+    },
+    {
+      id: "strategy",
+      title: "Leadership Strategy",
+      desc: "Empower your organization with visionary leaders who drive transformative growth and stability.",
+      icon: <StrategyIcon />,
+      bgElement: <Card4Illustration />
+    },
+    {
+      id: "governance",
+      title: "Corporate Governance",
+      desc: "Guiding boards to sustainable performance with expert advisory services and foresight.",
+      icon: <GovernanceIcon />,
+      bgElement: <Card5Illustration />
     }
   ];
 

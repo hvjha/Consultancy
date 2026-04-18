@@ -194,11 +194,27 @@ export const SERVICES_OFFERINGS = [
 ];
 
 export const INDUSTRIES_SERVED = [
-  { id: 1, name: "Chemicals", bgImage: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
-  { id: 2, name: "Renewable Energy", bgImage: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
-  { id: 3, name: "Auto Component / Auto Ancillaries", bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
-  { id: 4, name: "Industrial", bgImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" },
-  { id: 5, name: "FMCG / Fast Moving Consumer Durables", bgImage: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" }
+  { id: 1, name: "Chemicals", bgImage: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 2, name: "Renewable Energy", bgImage: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 3, name: "Auto Component / Auto Ancillaries", bgImage: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 4, name: "Industrial", bgImage: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 5, name: "FMCG / Fast Moving Consumer Durables", bgImage: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 6, name: "Pharma", bgImage: "https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 7, name: "Agrochemicals", bgImage: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 8, name: "Automobile OEM", bgImage: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 9, name: "Textile", bgImage: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 10, name: "Lifesciences", bgImage: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 11, name: "Healthcare", bgImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 12, name: "Software", bgImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 13, name: "Power", bgImage: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 14, name: "Food Processing", bgImage: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 15, name: "Worldwide Trading", bgImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 16, name: "Investment Division", bgImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 17, name: "Shipping", bgImage: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 18, name: "Logistics", bgImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 19, name: "Electrical & Electronics", bgImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 20, name: "Infrastructure", bgImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 21, name: "Metal, Mining & Minerals", bgImage: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
 ];
 
 export const PORTFOLIO_TESTIMONIALS = [
@@ -214,4 +230,17 @@ export const PORTFOLIO_TESTIMONIALS = [
     company: "Mitsui & Co. Ltd",
     text: "Really appreciate the kind of profiles we received for the given position and candidates were well prepared. Thank you for the support."
   }
+];
+
+export const FUNCTIONAL_ROLES = [
+  { id: 1, name: "Board & CEO", desc: "Visionary leaders for top executive positions.", bgImage: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 2, name: "Financial Management", desc: "CFOs and directors driving financial strategy.", bgImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 3, name: "Human Resources", desc: "CHROs and talent leaders shaping culture.", bgImage: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 4, name: "Information Technology", desc: "CIOs and CTOs steering digital transformation.", bgImage: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 5, name: "Sales & Marketing", desc: "Revenue drivers and brand visionaries.", bgImage: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 6, name: "Supply Chain & Procurement", desc: "Experts in logistical efficiency and strategic sourcing.", bgImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 7, name: "Legal & Compliance", desc: "General Counsels to navigate complex regulations.", bgImage: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 8, name: "Engineering & R&D", desc: "Innovators driving product creation and design.", bgImage: "https://images.unsplash.com/photo-1581092162384-8987c1d64718?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 9, name: "Operations", desc: "COOs dedicated to scalable process execution.", bgImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 10, name: "Corporate Strategy", desc: "Strategic planners framing the future.", bgImage: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
 ];
