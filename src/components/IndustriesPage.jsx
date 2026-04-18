@@ -46,6 +46,7 @@ export default function IndustriesPage() {
                 <img 
                   src={ind.bgImage} 
                   alt={ind.name}
+                  loading="lazy"
                   style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} 
                 />
               </div>
