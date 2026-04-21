@@ -1,11 +1,13 @@
 import React from 'react';
 import ServicesSSVC from '../components/ServicesSSVC';
 import TestimonialsSSVC from '../components/TestimonialsSSVC';
+import SEO from '../components/SEO';
 import ContactCTA from '../components/ContactCTA';
 
 export default function ServicesPage() {
   return (
     <>
+      <SEO title="Our Services" description="Explore our comprehensive executive search and consulting services." />
       <div style={{ background: '#67B7A9', padding: '120px 6vw 60px', textAlign: 'center', color: '#FFF', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, opacity: 0.15, display: 'flex', justifyContent: 'center', alignItems: 'center', pointerEvents: 'none' }}>
           <svg viewBox="0 0 800 400" width="100%" height="100%">

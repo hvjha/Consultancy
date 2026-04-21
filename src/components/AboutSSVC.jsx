@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const AboutIllustration = () => (
   <svg viewBox="0 0 500 350" width="100%" height="100%">
@@ -44,13 +45,13 @@ export default function AboutSSVC() {
             <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "16px", fontWeight: 700, lineHeight: 1.5, marginBottom: "30px" }}>
               Our accomplished leaders bring a wealth of expertise and experience to our organization
             </h4>
-            <a href="#visionary" style={{
+            <Link to="/management" style={{
               display: "inline-block", background: "#1A114D", color: "#FFFFFF",
               padding: "14px 28px", textDecoration: "none", fontSize: "13px",
               fontWeight: 700, fontFamily: "'DM Sans', sans-serif", borderRadius: "4px"
             }}>
               OUR VISIONARY LEADERS &rarr;
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -60,7 +61,7 @@ export default function AboutSSVC() {
             fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 700,
             letterSpacing: "1.5px", color: "#666", textTransform: "uppercase", marginBottom: "16px"
           }}>
-            ABOUT SSVC
+            ABOUT SSV
           </h5>
           <h2 style={{
             fontFamily: "'DM Sans', sans-serif", fontWeight: 700,
@@ -72,17 +73,17 @@ export default function AboutSSVC() {
             fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#1A114D",
             lineHeight: 1.7, marginBottom: "40px"
           }}>
-            At SSVC, we are dedicated to providing exceptional services in the field of executive search and talent acquisition. With a strong reputation built over 16 years, we have become a trusted partner for leading Indian and multinational companies in India.
+            At SSV, we are dedicated to providing exceptional services in the field of executive search and talent acquisition. With a strong reputation built over 16 years, we have become a trusted partner for leading Indian and multinational companies in India.
           </p>
 
-          <a href="#more" style={{
+          <Link to="/about" style={{
             color: "#55B1A8", fontFamily: "'DM Sans', sans-serif",
             fontSize: "13px", fontWeight: 700, letterSpacing: "1px",
             textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px",
             marginBottom: "50px"
           }}>
             MORE ABOUT US &rarr;
-          </a>
+          </Link>
 
           {/* Quote Bubble */}
           <div style={{

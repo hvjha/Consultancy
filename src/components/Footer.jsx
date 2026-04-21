@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const TopArrowIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -74,7 +75,7 @@ export default function Footer() {
 
             <div style={{ display: "flex", flexWrap: "wrap", gap: "24px", fontSize: "13px", fontWeight: 500 }}>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-                <PhoneIcon /> 011 45511599
+                <PhoneIcon /> +91 95824 39149
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                 <MailIcon /> info@ssvstaffsolutions.com
@@ -86,15 +87,21 @@ export default function Footer() {
           <div>
             <h4 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "24px" }}>Useful Links</h4>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
-              {["About", "Services", "Industries", "Functional Roles", "Contact", "Compliance"].map(link => (
-                <a key={link} href={`#${link.toLowerCase().split(' ')[0]}`} style={{ 
+              {[
+                { label: "About", path: "/about" },
+                { label: "Services", path: "/services" },
+                { label: "Industries", path: "/industries" },
+                { label: "Functional Roles", path: "/functional" },
+                { label: "Contact", path: "/contact" }
+              ].map(link => (
+                <Link key={link.label} to={link.path} style={{ 
                   color: "#FFFFFF", opacity: 0.8, textDecoration: "none", fontSize: "14px", transition: "opacity 0.2s, transform 0.2s", display: "inline-block"
                 }}
                 onMouseEnter={e => { e.target.style.opacity = "1"; e.target.style.transform = "translateX(5px)"; }}
                 onMouseLeave={e => { e.target.style.opacity = "0.8"; e.target.style.transform = "translateX(0)"; }}
                 >
-                  {link}
-                </a>
+                  {link.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -104,9 +111,9 @@ export default function Footer() {
             <h4 style={{ fontSize: "16px", fontWeight: 700, marginBottom: "24px" }}>Location</h4>
             <div style={{ fontSize: "14px", lineHeight: 1.8, opacity: 0.9 }}>
               <strong style={{ fontWeight: 600 }}>Registered Office</strong><br />
-              HD-026 WeWork DLF Forum,<br />
-              Cybercity Phase III,<br />
-              Gurugram - 122002
+              Diwan Mohalla, Sarvodya colony,<br />
+              Khangar Gali Patna City,<br />
+              Patna, Bihar - 800008
             </div>
           </div>
 

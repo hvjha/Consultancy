@@ -1,9 +1,12 @@
 import React from 'react';
 import { INDUSTRIES_SERVED } from '../data/data';
+import SEO from './SEO';
 
 export default function IndustriesPage() {
   return (
-    <section style={{ paddingBottom: "100px", background: "#fcfcff" }}>
+    <>
+      <SEO title="Industries We Service" description="We specialize in executive search for IT, Healthcare, Manufacturing, and more." />
+      <section style={{ paddingBottom: "100px", background: "#fcfcff" }}>
       {/* Hero Header matching the screenshot */}
       <div style={{ background: "#67B7A9", padding: "120px 6vw 60px", textAlign: "center", color: "#FFF", position: "relative", overflow: "hidden" }}>
          {/* Abstract light graphic in background */}
@@ -68,5 +71,6 @@ export default function IndustriesPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

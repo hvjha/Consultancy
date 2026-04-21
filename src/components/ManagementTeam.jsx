@@ -1,17 +1,12 @@
 import React from 'react';
+import DirectorPhoto from '../assets/hero.png';
 
 const TEAM_MEMBERS = [
   {
-    name: "Purnima Kajla",
+    name: "Nishant Awasthi",
     title: "Director & Founder",
     bio: "16+ years of entrepreneurial experience responsible for leading the company's vision, driving its business growth\n\nBefore that, she spent ten years at Henkel as a founding member of a new line of acoustic products for industrial, automotive, and consumer durable applications. Worked on job rotations in Germany, France, Korea & Australia as a part of a Technology transfer assignment. Post-graduation from IIT Delhi.",
-    imagePath: "purnima_placeholder.jpg"
-  },
-  {
-    name: "Ankita Paliwal",
-    title: "Head Operations",
-    bio: "Heading the service delivery that brings the full potential of SSVC to our clients. Her role as Head of Operations is to ensure client success. Ankita brings in close to 15 years of experience and has a successful track record to help the organization grow existing businesses and accelerate new businesses. Responsible for managing the delivery of all services that improve customer value and ROI. Self-starter with strong interpersonal skills.\n\nAnkita Paliwal holds a masters degree in Human Resources.",
-    imagePath: "ankita_placeholder.jpg"
+    imageSource: DirectorPhoto
   }
 ];
 
@@ -67,15 +62,11 @@ export default function ManagementTeam() {
               <div style={{ 
                 width: "100%", height: "350px", background: "#E8F1F2", 
                 position: "relative", overflow: "hidden", marginBottom: "30px",
-                display: "flex", justifyContent: "center", alignItems: "flex-end"
+                display: "flex", justifyContent: "center", alignItems: "center"
               }}>
-                 {/* Silhouette placeholder */}
-                 <svg width="200" height="250" viewBox="0 0 200 250" fill="none">
-                    <circle cx="100" cy="80" r="50" fill="#B0B7C3" />
-                    <path d="M20 250 Q100 130 180 250" fill="#B0B7C3" />
-                 </svg>
-                 {/* Gradient Vignette overlay seen in screenshot 2 */}
-                 <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle, transparent 40%, rgba(255,255,255,0.7) 100%)" }}></div>
+                 <img src={member.imageSource} alt={member.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                 {/* Gradient Vignette overlay */}
+                 <div style={{ position: "absolute", inset: 0, background: "radial-gradient(circle, transparent 40%, rgba(255,255,255,0.7) 100%)", pointerEvents: "none" }}></div>
               </div>
 
               <div style={{ padding: "0 30px", width: "100%", boxSizing: "border-box" }}>

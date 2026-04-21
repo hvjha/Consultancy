@@ -1,9 +1,12 @@
 import React from 'react';
 import { FUNCTIONAL_ROLES } from '../data/data';
+import SEO from './SEO';
 
 export default function FunctionalRolesPage() {
   return (
-    <section style={{ paddingBottom: "100px", background: "#fcfcff" }}>
+    <>
+      <SEO title="Functional Roles" description="Discover the specialized functional roles SSV places, from CEOs to supply chain experts." />
+      <section style={{ paddingBottom: "100px", background: "#fcfcff" }}>
       {/* Hero Header matching the Industries layout */}
       <div style={{ background: "#67B7A9", padding: "120px 6vw 60px", textAlign: "center", color: "#FFF", position: "relative", overflow: "hidden" }}>
          {/* Abstract light graphic in background */}
@@ -74,5 +77,6 @@ export default function FunctionalRolesPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

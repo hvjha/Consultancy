@@ -8,9 +8,7 @@ export default function ServiceDetails({ initialTab = 'mapping' }) {
   const tabs = [
     { id: 'mapping', title: 'Organizational Mapping' },
     { id: 'assessment', title: 'Executive Assessment' },
-    { id: 'strategy', title: 'Leadership Strategy' },
-    { id: 'search', title: 'Executive Search & Acquisition' },
-    { id: 'governance', title: 'Corporate Governance' }
+    { id: 'search', title: 'Executive Search & Acquisition' }
   ];
 
   const contentMap = {
@@ -83,38 +81,6 @@ export default function ServiceDetails({ initialTab = 'mapping' }) {
           <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "20px", color: "#55B1A8", marginBottom: "12px" }}>Data-Driven Competency Checks</h4>
           <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#4A5568", lineHeight: 1.7, marginBottom: "20px" }}>
             We implement scientifically backed competency frameworks seamlessly tailored to your organization's contextual demands, allowing for an incredibly insightful and non-biased evaluation process.
-          </p>
-        </>
-      )
-    },
-    strategy: {
-      header: "Leadership Strategy",
-      subtext: "Empower your organization with visionary leaders who drive transformative growth and stability.",
-      details: (
-        <>
-          <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "28px", color: "#55B1A8", marginBottom: "20px" }}>Leadership Strategy</h3>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#1A114D", lineHeight: 1.7, marginBottom: "24px", fontWeight: 500 }}>
-            Building the next generation of executives requires profound insight and systematic development. We partner with clients to evaluate their bench strength.
-          </p>
-          <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "20px", color: "#55B1A8", marginBottom: "12px" }}>Future-Proofing Leadership</h4>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#4A5568", lineHeight: 1.7, marginBottom: "20px" }}>
-            By focusing on core cultural pillars and emerging industry trends, our leadership strategy creates an enduring framework for continuous organizational growth and resilience.
-          </p>
-        </>
-      )
-    },
-    governance: {
-      header: "Corporate Governance",
-      subtext: "Expert advisory services to ensure alignment, accountability, and strategic foresight at the highest levels.",
-      details: (
-        <>
-          <h3 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "28px", color: "#55B1A8", marginBottom: "20px" }}>Corporate Governance</h3>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#1A114D", lineHeight: 1.7, marginBottom: "24px", fontWeight: 500 }}>
-            Guiding boards to sustainable performance through transparency and structured insight.
-          </p>
-          <h4 style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "20px", color: "#55B1A8", marginBottom: "12px" }}>Board Optimization</h4>
-          <p style={{ fontFamily: "'DM Sans', sans-serif", fontSize: "14px", color: "#4A5568", lineHeight: 1.7, marginBottom: "20px" }}>
-            We help establish strong operational mandates and governance models that mitigate risk, improve stakeholder communications, and foster robust decision-making.
           </p>
         </>
       )
