@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function IndustriesSSVC() {
   const industries = [
@@ -62,7 +63,7 @@ export default function IndustriesSSVC() {
             </div>
           </div>
 
-          <a href="#all-industries" style={{
+          <Link to="/industries" style={{
             background: "#1A114D", color: "#FFFFFF", padding: "12px 32px",
             fontFamily: "'DM Sans', sans-serif", fontSize: "12px", fontWeight: 700,
             textDecoration: "none", display: "inline-block", borderRadius: "4px",
@@ -72,7 +73,7 @@ export default function IndustriesSSVC() {
           onMouseLeave={e => e.target.style.background = "#1A114D"}
           >
             VIEW ALL
-          </a>
+          </Link>
 
         </div>
       </div>

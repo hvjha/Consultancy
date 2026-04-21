@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import SEO from './components/SEO';
 
 // Eagerly loaded components (always on home page or critical path)
 import HeroCarousel from './components/HeroCarousel';
@@ -12,7 +13,6 @@ import ServicesSSVC from './components/ServicesSSVC';
 import IndustriesSSVC from './components/IndustriesSSVC';
 import TestimonialsSSVC from './components/TestimonialsSSVC';
 import CompanyMarquee from './components/CompanyMarquee';
-import ContactCTA from './components/ContactCTA';
 
 // Lazy loaded pages (only download when navigated to)
 const AboutPage = lazy(() => import('./pages/AboutPage'));
@@ -43,6 +43,7 @@ function PageLoader() {
 function HomePage() {
   return (
     <>
+      <SEO title="Home" description="SSV Staff Solutions is your premier destination for hiring top executive talent." />
       <HeroCarousel />
       <div style={{ background: '#FFFFFF', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
         <CompanyMarquee />
@@ -52,7 +53,6 @@ function HomePage() {
       <ServicesSSVC />
       <IndustriesSSVC />
       <TestimonialsSSVC />
-      <ContactCTA />
     </>
   );
 }

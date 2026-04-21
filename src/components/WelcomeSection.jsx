@@ -35,7 +35,7 @@ export default function WelcomeSection() {
           fontFamily: "'DM Sans', sans-serif", fontSize: "11px", fontWeight: 700,
           letterSpacing: "1.5px", color: "#666", textTransform: "uppercase", marginBottom: "16px"
         }}>
-          Welcome to SSVC Staff Solution
+          Welcome to SSV Staff Solution
         </h5>
         
         <h2 style={{
@@ -63,14 +63,14 @@ export default function WelcomeSection() {
               fontFamily: "'DM Sans', sans-serif", fontWeight: 700,
                fontSize: "32px", color: "#55B1A8", marginBottom: "20px"
             }}>
-              Discover Your Next Executive on SSVC
+              Discover Your Next Executive on SSV
             </h3>
             
             <p style={{
               fontFamily: "'DM Sans', sans-serif", fontSize: "15px", color: "#1A114D",
               lineHeight: 1.6, marginBottom: "40px"
             }}>
-              SSVC is your premier destination for hiring top executive talent. Whether you're seeking a visionary CEO, a strategic CFO, or a dynamic executive leader, SSVC has the resources and expertise to find the perfect match for your organization.
+              SSV is your premier destination for hiring top executive talent. Whether you're seeking a visionary CEO, a strategic CFO, or a dynamic executive leader, SSV has the resources and expertise to find the perfect match for your organization.
             </p>
 
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "30px" }}>

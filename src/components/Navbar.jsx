@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import CompanyLogo from '../assets/Companylogo.jpeg';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,9 +32,7 @@ export default function Navbar() {
       { label: 'Our Services', path: '/services', icon: '↗', subDropdown: [
         { label: 'Talent Acquisition', path: '/services/search' },
         { label: 'Organizational Mapping', path: '/services/mapping' },
-        { label: 'Executive Assessment', path: '/services/assessment' },
-        { label: 'Leadership Strategy', path: '/services/strategy' },
-        { label: 'Corporate Governance', path: '/services/governance' },
+        { label: 'Executive Assessment', path: '/services/assessment' }
       ]},
       { label: 'Industries We Service', path: '/industries', icon: '↗' },
       { label: 'Functional Roles', path: '/functional', icon: '↗' },
@@ -55,16 +54,8 @@ export default function Navbar() {
         height: '80px',
       }}>
         {/* Brand Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '12px', textDecoration: 'none' }}>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="18" stroke="#55B1A8" strokeWidth="4" />
-            <path d="M12 25 L20 12 L28 25" stroke="#1A114D" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M16 20 h8" stroke="#1A114D" strokeWidth="4" strokeLinecap="round" />
-          </svg>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '22px', color: '#666', fontWeight: 700, lineHeight: 1 }}>SSVC</span>
-            <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: '10px', color: '#888', letterSpacing: '1px', marginTop: '2px' }}>STAFF SOLUTION</span>
-          </div>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <img src={CompanyLogo} alt="SSV Staff Solution" style={{ height: '50px', objectFit: 'contain' }} />
         </Link>
 
         {/* Desktop Nav Links */}

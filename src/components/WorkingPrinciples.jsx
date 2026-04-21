@@ -11,7 +11,7 @@ const WorkingPrinciples = () => {
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
         </svg>
       ),
-      desc: "SSVC is committed to providing dedicated and decisive support. We work closely with management, thoroughly understanding priorities to deliver exceptional services."
+      desc: "SSV is committed to providing dedicated and decisive support. We work closely with management, thoroughly understanding priorities to deliver exceptional services."
     },
     {
       num: "02",

@@ -1,5 +1,6 @@
 import React from 'react';
 import AboutSSVC from '../components/AboutSSVC';
+import SEO from '../components/SEO';
 import WorkingPrinciples from '../components/WorkingPrinciples';
 import TestimonialsSSVC from '../components/TestimonialsSSVC';
 import ContactCTA from '../components/ContactCTA';
@@ -25,6 +26,7 @@ function PageHero({ title, breadcrumb }) {
 export default function AboutPage() {
   return (
     <>
+      <SEO title="About Us" description="Learn about SSV Staff Solutions and our 16+ years of expertise in executive search." />
       <PageHero title="About Us" breadcrumb={<>HOME <span style={{ margin: '0 6px' }}>_</span> ABOUT</>} />
       <AboutSSVC />
       <WorkingPrinciples />

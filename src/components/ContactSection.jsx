@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { COMPANY_LOGOS } from '../data/data';
+import SEO from './SEO';
 
 const DocumentIcon = () => (
   <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#55B1A8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -44,9 +46,41 @@ const WorldMapWatermark = () => (
 
 export default function ContactSection() {
   const [captchaChecked, setCaptchaChecked] = useState(false);
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', message: '' });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!captchaChecked) {
+      alert("Please confirm you are not a robot.");
+      return;
+    }
+    if (!formData.name) {
+      alert("Please enter your name.");
+      return;
+    }
+    
+    const subject = encodeURIComponent("New Contact Request from " + formData.name);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Email: ${formData.email}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:ajha25770@gmail.com?subject=${subject}&body=${body}`;
+    // Optional: reset form
+    setFormData({ name: '', phone: '', email: '', message: '' });
+    setCaptchaChecked(false);
+  };
 
   return (
     <section id="contact" style={{ background: "#FAFAFA", padding: 0 }}>
+      <SEO title="Contact Us" description="Get in touch with SSV Staff Solutions for your executive recruitment needs." />
       {/* Banner Area (Image 1) */}
       <div style={{
         background: "#67B7A9", height: "320px", display: "flex", flexDirection: "column",
@@ -105,10 +139,10 @@ export default function ContactSection() {
                 Call or Email
               </div>
               <div style={{ fontSize: "14px", fontWeight: 700, color: "#1A114D", marginBottom: "8px" }}>
-                011 45511599
+                +91 95824 39149
               </div>
               <div style={{ fontSize: "13px", fontWeight: 500, color: "#1A114D" }}>
-                aquariusteam@aquariusconsultants.in
+                info@ssvstaffsolutions.com
               </div>
             </div>
           </div>
@@ -124,13 +158,29 @@ export default function ContactSection() {
               Ready to Connect? Write to us!
             </h3>
             
-            <form style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               <div style={{ display: "flex", gap: "20px", flexWrap: "wrap" }}>
-                <input type="text" placeholder="Your Name *" style={{ flex: "1 1 calc(50% - 10px)", padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", outline: "none" }} />
-                <input type="text" placeholder="Phone" style={{ flex: "1 1 calc(50% - 10px)", padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", outline: "none" }} />
+                <input 
+                  type="text" name="name" value={formData.name} onChange={handleInputChange} 
+                  placeholder="Your Name *" required
+                  style={{ flex: "1 1 calc(50% - 10px)", padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", outline: "none" }} 
+                />
+                <input 
+                  type="text" name="phone" value={formData.phone} onChange={handleInputChange} 
+                  placeholder="Phone" 
+                  style={{ flex: "1 1 calc(50% - 10px)", padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", outline: "none" }} 
+                />
               </div>
-              <input type="email" placeholder="Email Address" style={{ padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", outline: "none" }} />
-              <textarea placeholder="Type Your Message..." rows="4" style={{ padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", resize: "vertical", outline: "none" }} />
+              <input 
+                type="email" name="email" value={formData.email} onChange={handleInputChange} 
+                placeholder="Email Address" 
+                style={{ padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", outline: "none" }} 
+              />
+              <textarea 
+                name="message" value={formData.message} onChange={handleInputChange} 
+                placeholder="Type Your Message..." rows="4" 
+                style={{ padding: "14px", border: "1px solid #EEEEEE", borderRadius: "2px", fontSize: "13px", fontFamily: "'DM Sans', sans-serif", color: "#333", resize: "vertical", outline: "none" }} 
+              />
               
               {/* Fake reCAPTCHA */}
               <div style={{
@@ -157,7 +207,7 @@ export default function ContactSection() {
                 </div>
               </div>
 
-              <button type="button" style={{
+              <button type="submit" style={{
                 background: "#67B7A9", color: "#FFFFFF", border: "none", padding: "18px",
                 fontSize: "12px", fontWeight: 700, letterSpacing: "1px", cursor: "pointer",
                 borderRadius: "2px", transition: "background 0.3s, transform 0.2s"
@@ -184,36 +234,52 @@ export default function ContactSection() {
            <div className="marquee-container" style={{ display: "flex", width: "max-content" }}>
              {/* Original Set */}
              <div className="marquee-content" style={{ display: "flex" }}>
-               {["Reckitt Benckiser", "LUMAX", "JBM Group", "JSLA Lifestyle", "PADMINI VNA", "IFB"].map((logo, idx) => (
+               {COMPANY_LOGOS.map((logo, idx) => (
                  <div key={`logo-1-${idx}`} style={{ 
-                   width: "200px", height: "100px", 
+                   width: "240px", height: "100px", 
                    borderRight: "1px solid rgba(62, 39, 35, 0.05)", 
                    display: "flex", justifyContent: "center", alignItems: "center", padding: "20px" 
                  }}>
                     <div style={{ 
                       background: "#FFFFFF", padding: "10px 16px", borderRadius: "2px", 
                       boxShadow: "0 2px 4px rgba(0,0,0,0.02)", fontSize: "12px", fontWeight: 800, 
-                      color: "#1A114D", textAlign: "center", width: "100%" 
+                      color: "#1A114D", display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", width: "100%" 
                     }}>
-                      {logo}
+                      {logo.domain && (
+                        <img 
+                          src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`} 
+                          alt={logo.name + " logo"} 
+                          style={{ width: "20px", height: "20px", objectFit: "contain", borderRadius: "4px" }} 
+                          onError={(e) => { e.target.style.display = 'none'; }} 
+                        />
+                      )}
+                      <span>{logo.name}</span>
                     </div>
                  </div>
                ))}
              </div>
              {/* Duplicated Set for Infinite Loop */}
              <div className="marquee-content" style={{ display: "flex" }}>
-               {["Reckitt Benckiser", "LUMAX", "JBM Group", "JSLA Lifestyle", "PADMINI VNA", "IFB"].map((logo, idx) => (
+               {COMPANY_LOGOS.map((logo, idx) => (
                  <div key={`logo-2-${idx}`} style={{ 
-                   width: "200px", height: "100px", 
+                   width: "240px", height: "100px", 
                    borderRight: "1px solid rgba(62, 39, 35, 0.05)", 
                    display: "flex", justifyContent: "center", alignItems: "center", padding: "20px" 
                  }}>
                     <div style={{ 
                       background: "#FFFFFF", padding: "10px 16px", borderRadius: "2px", 
                       boxShadow: "0 2px 4px rgba(0,0,0,0.02)", fontSize: "12px", fontWeight: 800, 
-                      color: "#1A114D", textAlign: "center", width: "100%" 
+                      color: "#1A114D", display: "flex", justifyContent: "center", alignItems: "center", gap: "10px", width: "100%" 
                     }}>
-                      {logo}
+                      {logo.domain && (
+                        <img 
+                          src={`https://www.google.com/s2/favicons?domain=${logo.domain}&sz=64`} 
+                          alt={logo.name + " logo"} 
+                          style={{ width: "20px", height: "20px", objectFit: "contain", borderRadius: "4px" }} 
+                          onError={(e) => { e.target.style.display = 'none'; }} 
+                        />
+                      )}
+                      <span>{logo.name}</span>
                     </div>
                  </div>
                ))}
@@ -233,9 +299,9 @@ export default function ContactSection() {
                     Registered Office
                   </h4>
                   <div style={{ color: "#1A114D", fontSize: "13px", lineHeight: 1.8, fontWeight: 500 }}>
-                    HD-028 WeWork DLF forum,<br />
-                    Cybercity Phase III,<br />
-                    Gurugram - 122002
+                    Diwan Mohalla, Sarvodya colony,<br />
+                    Khangar Gali Patna City,<br />
+                    Patna, Bihar - 800008
                   </div>
                </div>
             </div>

@@ -132,36 +132,26 @@ export const HERO_SLIDES = [
     layout: "image-right"
   },
   {
-    id: 3,
-    tabId: 'strategy',
-    title: "LEADERSHIP STRATEGY",
-    heading: "Building the next generation of executives.",
-    desc: "Empower your organization with visionary leaders who drive transformative growth and stability.",
-    buttonText: "DISCOVER HOW",
-    layout: "image-left"
-  },
-  {
     id: 4,
     tabId: 'search',
     title: "TALENT ACQUISITION",
     heading: "Securing top-tier talent for global markets.",
     desc: "A streamlined, data-driven approach to finding the perfect executive fit for your specialized needs.",
     buttonText: "OUR PROCESS",
-    layout: "image-right"
-  },
-  {
-    id: 5,
-    tabId: 'governance',
-    title: "CORPORATE GOVERNANCE",
-    heading: "Guiding boards to sustainable performance.",
-    desc: "Expert advisory services to ensure alignment, accountability, and strategic foresight at the highest levels.",
-    buttonText: "EXPLORE SERVICES",
     layout: "image-left"
   }
 ];
 
 export const COMPANY_LOGOS = [
-  "TWIGA", "talbros", "UNO MINDA", "SRF", "SPARK MINDA", "SUZUKI"
+  { name: "Yazaki India", domain: "yazaki.com" },
+  { name: "SRF LTD", domain: "srf.com" },
+  { name: "Spark Minda", domain: "sparkminda.com" },
+  { name: "Jyothy Labs", domain: "jyothylabs.com" },
+  { name: "Dabur", domain: "dabur.com" },
+  { name: "Priya Gold", domain: "priyagold.com" },
+  { name: "Big Mishra", domain: "" },
+  { name: "PPAP Automotive", domain: "ppapco.in" },
+  { name: "Bharat Electricals", domain: "bel-india.in" }
 ];
 
 export const WELCOME_FEATURES = [
@@ -205,16 +195,19 @@ export const INDUSTRIES_SERVED = [
   { id: 9, name: "Textile", bgImage: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 10, name: "Lifesciences", bgImage: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 11, name: "Healthcare", bgImage: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { id: 12, name: "Software", bgImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 12, name: "IT Industries", bgImage: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 13, name: "Power", bgImage: "https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 14, name: "Food Processing", bgImage: "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { id: 15, name: "Worldwide Trading", bgImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 15, name: "Trading", bgImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 16, name: "Investment Division", bgImage: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 17, name: "Shipping", bgImage: "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 18, name: "Logistics", bgImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 19, name: "Electrical & Electronics", bgImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
   { id: 20, name: "Infrastructure", bgImage: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
-  { id: 21, name: "Metal, Mining & Minerals", bgImage: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
+  { id: 21, name: "Metal, Mining & Minerals", bgImage: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 22, name: "Diagnostic", bgImage: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 23, name: "Instrument", bgImage: "https://images.unsplash.com/photo-1516216628859-9bccecab13ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" },
+  { id: 24, name: "Furniture", bgImage: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" }
 ];
 
 export const PORTFOLIO_TESTIMONIALS = [

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Card1Illustration = () => (
   <svg viewBox="0 0 300 250" width="100%" height="100%" style={{ background: "linear-gradient(to bottom, #7CD5CE, #A6E3E9)" }}>
@@ -97,6 +98,7 @@ const Card5Illustration = () => (
 
 const ServiceCard = ({ id, title, desc, icon, bgElement, onOpenService }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div 
@@ -177,7 +179,11 @@ const ServiceCard = ({ id, title, desc, icon, bgElement, onOpenService }) => {
           display: "flex", alignItems: "center", justifyContent: "center", gap: "8px",
           transition: "background 0.2s"
         }}
-        onClick={(e) => { e.preventDefault(); if(onOpenService) onOpenService(id); }}
+        onClick={(e) => { 
+          e.preventDefault(); 
+          if(onOpenService) onOpenService(id); 
+          else navigate(`/services/${id}`);
+        }}
         onMouseEnter={e => e.target.style.background = "#261970"}
         onMouseLeave={e => e.target.style.background = "#1A114D"}
         >
@@ -210,20 +216,6 @@ export default function ServicesSSVC({ onOpenService }) {
       desc: "Make informed decisions about talent development, succession planning, and leadership effectiveness.",
       icon: <AssessmentIcon />,
       bgElement: <Card3Illustration />
-    },
-    {
-      id: "strategy",
-      title: "Leadership Strategy",
-      desc: "Empower your organization with visionary leaders who drive transformative growth and stability.",
-      icon: <StrategyIcon />,
-      bgElement: <Card4Illustration />
-    },
-    {
-      id: "governance",
-      title: "Corporate Governance",
-      desc: "Guiding boards to sustainable performance with expert advisory services and foresight.",
-      icon: <GovernanceIcon />,
-      bgElement: <Card5Illustration />
     }
   ];
 
